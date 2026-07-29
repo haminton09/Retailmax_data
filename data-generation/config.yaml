@@ -1,0 +1,322 @@
+# Tipos de Supermercados
+tipos_tienda:
+  - producto: 'hipermercado'
+    demanda: 20
+  - producto: 'supermercado'
+    demanda: 55
+  - producto: 'tienda_conveniencia'
+    demanda: 25
+
+# Canales de ventas
+canales:
+  - producto: 'tienda'
+    demanda: 75
+  - producto: 'ecommerce'
+    demanda: 11
+  - producto: 'marketplace'
+    demanda: 14
+
+# Macro categorías
+macro_categorias:
+  - producto: 'Alimentos y Bebidas'
+    demanda: 30
+  - producto: 'Cuidado personal e Higiene'
+    demanda: 10
+  - producto: 'Hogar y Limpieza'
+    demanda: 20
+  - producto: 'Electrónica y Tecnología'
+    demanda: 20
+  - producto: 'Ropa y Calzado'
+    demanda: 10
+  - producto: 'Bebés y maternidad'
+    demanda: 10
+
+# Rango de precios por macro Catálogo
+rango_precios_por_catálogo:
+  'Alimentos y Bebidas':
+    min: 2500
+    max: 90000
+  'Cuidado Personal e Higiene':
+    min: 5000
+    max: 120000
+  'Hogar y Limpieza':
+    min: 10000
+    max: 120000
+  'Electrónica y Tecnología':
+    min: 30000
+    max: 5000000
+  'Ropa y calzado básico':
+    min: 30000
+    max: 280000
+  'Bebés y Maternidad':
+    min: 8000
+    max: 180000
+
+# Países de operación y su distribución de tiendas/miembros
+paises:
+  colombia:
+    demanda: 35
+    ciudades:
+      - bogota
+      - medellin
+      - cali
+  mexico:
+    demanda: 30
+    ciudades:
+      - ciudad_mexico
+      - guadalajara
+      - monterrey
+  chile:
+    demanda: 15
+    ciudades:
+      - Santiago_de_chile
+      - valparaiso
+  peru:
+    demanda: 12
+    ciudades:
+      - Lima
+      - Arequipa
+  ecuador:
+    demanda: 08
+    ciudades:
+      - Quito
+      - Guayaquil
+
+# Centros de distribución regionales y tiempos de reabastecimiento
+centros_distribucion:
+  - nombre: CD_Bogota
+    pais_asociado: colombia
+    tiempo_repo_dias:
+      min: 1
+      max: 3
+  - nombre: CD_Ciudad_Mexico
+    pais_asociado: mexico
+    tiempo_repo_dias:
+      min: 1
+      max: 3
+  - nombre: CD_Santiago
+    pais_asociado: chile
+    tiempo_repo_dias:
+      min: 1
+      max: 3
+  - nombre: CD_Lima
+    pais_asociado: peru
+    tiempo_repo_dias:
+      min: 1
+      max: 3
+  - nombre: CD_Quito
+    pais_asociado: ecuador
+    tiempo_repo_dias:
+      min: 1
+      max: 3
+
+# Parámetros de stock para INV_STOCK_DIARIO
+stock:
+  stock_minimo_config:
+    min: 10
+    max: 100
+  stock_maximo_config:
+    min: 100
+    max: 1000
+  stock_fisico_variacion: 0.30 # variación diaria en torno al consumo estimado
+
+# Volúmenes de datos a generar
+volumenes:
+  articulos: 5000
+  proveedores: 800
+  tiendas: 150
+  miembros: 50000
+  ventas: 1000000
+  inventario: 750000
+  devoluciones: 50000
+
+
+# Rango de fechas de la simulación
+rango_fechas:
+  inicio: '2023-01-01'
+  fin: '2026-06-30'
+
+# Porcentaje de valores nulos a introducir en campos no críticos
+valores_nulos: 0.05
+
+# Formatos de salida de los datos (mínimo dos distintos, ingesta heterogénea)
+formatos_salida:
+  - csv
+  - json
+
+# Demanda de franjas horarias
+franjas_horarias:
+  - nombre: manana
+    inicio: '07:00'
+    fin: '11:59'
+    demanda: 0.20
+  - nombre: mediodia
+    inicio: '12:00'
+    fin: '13:59'
+    demanda: 0.30
+  - nombre: tarde
+    inicio: '14:00'
+    fin: '17:59'
+    demanda: 0.15
+  - nombre: noche
+    inicio: '18:00'
+    fin: '23:59'
+    demanda: 0.05
+
+# Distribución por día de la semana
+dias_semana:
+  lunes: 0.90
+  martes: 0.95
+  miercoles: 1.00
+  jueves: 1.05
+  viernes: 1.30
+  sabado: 1.60
+  domingo: 1.40
+
+# Distribución de edades (para generar la edad numérica base)
+edades:
+  media: 36
+  desviacion: 15
+  minimo: 15
+  maximo: 89
+
+# Bins de rango_edad (campo categórico requerido en CRM_MIEMBROS)
+rango_edad_bins:
+  - rango: '15-25'
+    min: 18
+    max: 25
+  - rango: '26-35'
+    min: 26
+    max: 35
+  - rango: '36-45'
+    min: 36
+    max: 45
+  - rango: '46-60'
+    min: 46
+    max: 60
+  - rango: '60+'
+    min: 61
+    max: 89
+
+# Distribución de género
+genero:
+  - nombre: masculino
+    demanda: 35
+  - nombre: femenino
+    demanda: 55
+  - nombre: no_informado
+    demanda: 10
+
+# Métodos de pago
+tipos_pago:
+  - nombre: 'tarjeta_credito'
+    demanda: 10
+  - nombre: 'tarjeta_debito'
+    demanda: 20
+  - nombre: 'efectivo'
+    demanda: 30
+  - nombre: 'transferencia'
+    demanda: 10
+  - nombre: 'billetera_digital'
+    demanda: 30
+
+# Descuentos aplicados en ventas (fact_ventas y KPI)
+descuento_aplicado:
+  probabilidad_con_descuento: 25
+  rango_porcentaje:
+    min: 05
+    max: 30
+
+# Motivos de devolución (fact_devoluciones - Gold)
+motivos_devolucion:
+  - codigo: 'P_DEF'
+    descripcion: 'Producto defectuoso'
+    demanda: 30
+  - codigo: 'P_SIZE'
+    descripcion: 'Talla o tamaño incorrecto'
+    demanda: 20
+  - codigo: 'P_ARR'
+    descripcion: 'Arrepentimiento de compra'
+    demanda: 25
+  - codigo: 'P_VEN'
+    descripcion: 'Producto vencido'
+    demanda: 10
+  - codigo: 'P_ERR'
+    descripcion: 'Error en el pedido'
+    demanda: 15
+
+# Estados de la devolución
+estados_devolucion:
+  - nombre: 'aprobada'
+    demanda: 20
+  - nombre: 'rechazada'
+    demanda: 50
+  - nombre: 'en_proceso'
+    demanda: 30
+
+# Calificación de calidad de proveedores (MSTR_PROVEEDORES)
+calificacion_proveedores:
+  media: 3
+  desviacion: 2
+  minimo: 1
+  maximo: 5
+
+# Porcentaje de registros activos por tabla maestra
+activos:
+  articulos: 0.92
+  proveedores: 0.95
+  tiendas: 0.98
+  miembros: 0.85
+
+# Anomalías intencionales
+anomalias:
+  habilitadas: true
+  duplicados:
+    porcentaje: 0.005
+  fechas_fuera_rango:
+    porcentaje: 0.002
+  referencias_inexistentes:
+    porcentaje: 0.003
+
+catalogo_por_categoria:
+  'Alimentos y bebidas':
+    - 'Arroz'
+    - 'Aceite'
+    - 'Gaseosa'
+    - 'Pasta'
+  'Cuidado personal e higiene':
+    - 'Shampoo'
+    - 'Jabón'
+    - 'Crema dental'
+  'Hogar y limpieza':
+    - 'Detergente'
+    - 'Escoba'
+    - 'Desinfectante'
+  'Electrónica y tecnología':
+    - 'Audífonos'
+    - 'Cargador'
+    - 'Mouse'
+  'Ropa y calzado básico':
+    - 'Camiseta'
+    - 'Medias'
+    - 'Tenis'
+  'Bebés y maternidad':
+    - 'Pañales'
+    - 'Toallitas húmedas'
+    - 'Biberón'
+
+presentaciones:
+  - nombre: 'Pequeño'
+  - nombre: 'Mediano'
+  - nombre: 'Grande'
+  - nombre: 'Familiar'
+  - nombre: 'x1'
+  - nombre: 'x3'
+  - nombre: 'x6'
+  - nombre: 'x12'
+  - nombre: '250g'
+  - nombre: '500g'
+  - nombre: '1kg'
+  - nombre: '500ml'
+  - nombre: '1L'
+  - nombre: '2L'
