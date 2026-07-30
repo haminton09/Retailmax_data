@@ -7,6 +7,116 @@ tipos_tienda:
   - producto: 'tienda_conveniencia'
     demanda: 25
 
+
+  valores:
+
+    - Hipermercado
+    - Supermercado
+    - Express
+    - Mayorista
+    - Outlet
+    - Conveniencia
+
+  pesos:
+
+    - 35
+    - 30
+    - 15
+    - 10
+    - 5
+    - 5
+
+unidades:
+
+  - UND
+  - KG
+  - LT
+  - ML
+  - CJ
+  - PQ
+  - LB
+
+categorias_n1:
+
+  - Alimentos
+  - Bebidas
+  - Hogar
+  - Tecnología
+  - Salud
+  - Belleza
+  - Mascotas
+  - Deportes
+  - Ferretería
+  - Papelería
+
+categorias_n2:
+
+  - Lácteos
+  - Carnes
+  - Frutas
+  - Verduras
+  - Panadería
+  - Limpieza
+  - Electrodomésticos
+  - Celulares
+  - Computadores
+  - Televisores
+  - Cosméticos
+  - Vitaminas
+  - Bicicletas
+  - Herramientas
+  - Cuadernos
+
+categorias_n3:
+
+  - Yogures
+  - Quesos
+  - Leche
+  - Res
+  - Cerdo
+  - Pollo
+  - Manzanas
+  - Bananos
+  - Arroz
+  - Pasta
+  - Shampoo
+  - Jabón
+  - Portátiles
+  - Monitores
+  - Mouse
+  - Teclados
+  - Impresoras
+  - Taladros
+  - Pinturas
+  - Balones
+
+marcas:
+
+  - Samsung
+  - LG
+  - Sony
+  - HP
+  - Lenovo
+  - Dell
+  - Asus
+  - Acer
+  - Apple
+  - Xiaomi
+  - Nestlé
+  - Alpina
+  - Colgate
+  - Familia
+  - Ariel
+  - Coca-Cola
+  - Pepsi
+  - Bimbo
+  - Noel
+  - Colombina
+  - Nike
+  - Adidas
+  - Puma
+
+
 # Canales de ventas
 canales:
   - producto: 'tienda'
